@@ -1,0 +1,14 @@
+#macOS from github/gitignore
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/*
+*.pyc
+
+# Docker
+.env
+
+# rbenv
+.ruby-version
