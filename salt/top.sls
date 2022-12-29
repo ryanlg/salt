@@ -1,5 +1,5 @@
-# Highstate for all slat minions under Ryhino
+# Highstate for all Salt minions under Ryhino
 
 base:
-    '*':
+    'salt.*':
         - os.auto-update
