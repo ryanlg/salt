@@ -1,0 +1,33 @@
+#! /usr/bin/env bash
+#
+# This script is used to prepare a freshly-instealled Rocky Linux 9 VM to a "generic"
+# one that can be cloned into a template.
+#
+# Note that this is only a template that needs to be injected by `op` (1Password CLI 2).
+# See the `justfile` at project root for recipes to do so.
+
+set -euxo pipefail
+
+dnf upgrade --assumeyes
+
+# SaltStack needs guest customization, which depends on `open-vm-tools`, which
+# implicitly depends on `perl` even thought it doesn't pull it in when
+# installed. Otherwise, when `salt-cloud` deploys a VM, the NIC stays
+# "disconnected" in vCenter even though it was created.
+dnf install open-vm-tools perl vim --assumeyes
+
+echo "Writing SSH key for root..."
+mkdir -p /root/.ssh
+cat >/root/.ssh/authorized_keys <<EOF
+{{ op://ryhino/3go34rott677qsgub7vj5md4fi/public_key }}
+EOF
+chmod 700 /root/.ssh
+chmod 600 /root/.ssh/authorized_keys
+
+echo "Allowing only key-based logins..."
+sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+
+dnf clean all
+
+echo "We are done. Deleting this script itself..."
+rm -- "$0"
