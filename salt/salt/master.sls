@@ -9,3 +9,11 @@
     - group: saltmaster
     - mode: 644
     - makedirs: True
+
+
+# Open salt-master ports to public
+{% if grains['os'] == 'Rocky' %}
+public:
+  firewalld.present:
+    - services: salt-master
+{% endif %}
