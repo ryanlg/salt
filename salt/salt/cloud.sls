@@ -4,6 +4,13 @@
 {% import_yaml "salt/initial_keys.map" as initial_keys %}
 
 
+# Install pyVmomi, which is needed to communicate with vCenter.
+# By default Salt should install it in an environment that Salt itself can use.
+pyvmomi:
+  pip.installed:
+    - upgrade: true
+
+
 /etc/salt/cloud:
   file.managed:
     - source: salt://salt/files/cloud
