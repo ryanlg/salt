@@ -1,0 +1,5 @@
+# salt-cloud Global Configuration
+# This file should normally be installed at: /etc/salt/cloud
+
+minion:
+  master: salt.bedrock.ryanl.io

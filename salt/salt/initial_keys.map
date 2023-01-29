@@ -1,0 +1,22 @@
+# Initial Keys to Deployed Templates
+# ==================================
+# These keys can be used to log into VMs deployed by `salt-cloud` after they get
+# cloned/created initially.
+# Each VM template will have a different SSH key that can be used to log into `root`,
+# which is to facilitate Salt doing some initial bootstrapping.
+
+generic-rocky-9.1: |
+  -----BEGIN PGP MESSAGE-----
+  hF4DNtygortYQDMSAQdA9KYDjXrRj/cjejDy1fk1nNRK8qeDyvsDyu1ErzRLOT8w
+  7FKsIY8lolnZ/PM7iKG9pcPQGihT+Ur3WPxBWLnfHGHnCGQRNz/klS0n1VRf/8F/
+  1MDSAQkCEGW/HpsWC4zoNkZOCLapyyXU0XvR/bQVTrabd7/OcDhwY9KB6LSTu3Km
+  AA+m3mYaSw1a0msFAAsdCnrbECxA9UheAVThKSUdasziw4cL3yzHL2sduuIn0YL/
+  HKKguzaJONsq7juEnW+rYOPKjWnqqsTHX0CMm+HnZXry8c9vxDPAspqxx7pT5wdN
+  bKhcCIzww6NVAdths6/z3elaMIsj/gbS6r/uJGUc+w+TgdNfZH974zvBA70o5+yV
+  KVybqBK0HQEzFPLY/b+FWyKvf2yICMlhFk96dK8dT5szOeqc6vvrDU0KaZKWkYUF
+  h8qFkIIXsHiz5M7fOAOryok3DOm6UFc+OAv3a/CYpjVrXtGozi8KqWH6wjfEAh0w
+  LaukkwgqDpOIRWV7QT7PkQxZAgJ0/YlhNY/78IoJqneSKDPhLD3boxrrvMB8blqF
+  1JagFVn37v6te/ukoDFQLjhAgqRT3+J6wjnl+FpG+kqoDUm8RuZSewxU09hri54I
+  vayz5TOCwtdWT6gESS2jyv1vwYAi
+  =Hc7y
+  -----END PGP MESSAGE-----
