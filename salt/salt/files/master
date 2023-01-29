@@ -1,0 +1,5 @@
+# salt-master Global Configuration
+# This file should normally be installed at: /etc/salt/master
+
+user: saltmaster
+renderer: jinja | yaml | gpg

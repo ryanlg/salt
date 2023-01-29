@@ -29,3 +29,13 @@ prepare-remote-as-template template dest:
 
 # Prepare {{dest}} VM to be used as a generic Rocky Linux template. {{dest}} looks like "rocky@10.0.0.1".
 prepare-generic-rocky-template dest: (prepare-remote-as-template "generic-rocky" dest)
+
+
+# GPG
+# =====
+# Encrypt Salt pillar data with GPG
+
+GPG_KEY_FINGERPRINT := "5C5A7608E659DB56C168ABC03C4BF56A3043568B"
+
+encrypt-pillar:
+    gpg --armor --trust-model always -r {{ GPG_KEY_FINGERPRINT }} --encrypt
