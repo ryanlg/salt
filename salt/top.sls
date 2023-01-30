@@ -8,3 +8,7 @@ base:
     - os.auto-update
     - salt.master
     - salt.cloud
+
+  'opsa.*':
+    - os.auto-update
+    - docker.software
