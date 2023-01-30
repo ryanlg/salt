@@ -1,5 +1,9 @@
 # salt-master Global Configuration
 # This file should normally be installed at: /etc/salt/master
 
+# By default, we assume "saltmaster" is the unprivileged user running salt master.
+# See docs.saltproject.io/en/latest/ref/configuration/nonroot.html
 user: saltmaster
+
+# Use GPG-renderer by default for sensitive and encrypted data
 renderer: jinja | yaml | gpg
