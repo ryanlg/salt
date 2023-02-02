@@ -1,3 +1,5 @@
+{% set connect_server = salt['pillar.get']("secrets_automation:connect_server") %}
+
 version: "3.8"
 
 services:
