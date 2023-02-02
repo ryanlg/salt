@@ -4,12 +4,15 @@
 # server.
 # Currently, these credentials point to "ryhino-prod" environment.
 
+# Directory under which the credentials.json and docker-compose.yaml will be put
+{%- set opsa_config_dir = "/root/opsa" %}
+
 secrets_automation:
   connect_server:
     api_image_tag: "sha256:143df8c290dcb353b4da896a6a8a8c11f686cb1033981982f798c60f67efd090"
     sync_image_tag: "sha256:7f853e8fb65d32c032819d09a2af31137b723701cc06da313aa5e8b775bc79d7"
 
-    config_dir: "/root/opsa"
+    config_dir: {{ opsa_config_dir }}
 
     credentials_json: |
       -----BEGIN PGP MESSAGE-----
@@ -69,4 +72,4 @@ docker:
     applications:
       - connect-server
     connect-server:
-      path: {{ secret-automation.connect_server.config_dir }}/docker-compose.yaml
+      path:  {{ opsa_config_dir }}/docker-compose.yaml
