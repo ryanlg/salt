@@ -61,3 +61,12 @@ secrets_automation:
       SQIUQs9HPNVybjw5
       =KM63
       -----END PGP MESSAGE-----
+
+# Run OPSA's Docker container.
+# This pillar requires "salt-formulas/docker-formula".
+docker:
+  compose:
+    applications:
+      - connect-server
+    connect-server:
+      path: {{ secret-automation.connect_server.config_dir }}/docker-compose.yaml
