@@ -1,6 +1,9 @@
 base:
-  '*':
+  "*":
     - chrony
 
-  'salt.*':
+  "salt.*":
     - saltmaster
+
+  "opsa.*":
+    - secrets-automation.prod

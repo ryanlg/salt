@@ -11,4 +11,4 @@ base:
 
   'opsa.*':
     - os.auto-update
-    - docker.software
+    - secrets-automation

@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  op-connect-api:
+    image: 1password/connect-api:{{ connect_server.api_image_tag }}
+    ports:
+      - "8080:80"
+    volumes:
+      - "{{ connect_server.config_dir }}/1password-credentials.json:/home/opuser/.op/1password-credentials.json"
+      - "data:/home/opuser/.op/data"
+
+  op-connect-sync:
+    image: 1password/connect-sync:{{ connect_server.sync_image_tag }}
+    ports:
+      - "8081:8080"
+    volumes:
+      - "{{ connect_server.config_dir }}/1password-credentials.json:/home/opuser/.op/1password-credentials.json"
+      - "data:/home/opuser/.op/data"
+
+volumes:
+  data:
