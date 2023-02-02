@@ -19,12 +19,12 @@
     - source: salt://secrets-automation/files/docker-compose.yaml
     - user: root
     - group: root
-    - file_mode: 644
+    - mode: 644
     - template: jinja
 
 {{ connect_server.config_dir }}/1password-credentials.json:
   file.managed:
     - user: root
     - group: root
-    - file_mode: 600
+    - mode: 600
     - contents: {{ connect_server.credentials_json | yaml_encode }}

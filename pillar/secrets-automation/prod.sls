@@ -68,6 +68,10 @@ secrets_automation:
 # Run OPSA's Docker container.
 # This pillar requires "salt-formulas/docker-formula".
 docker:
+  wanted:
+    - docker
+    - compose
+
   compose:
     applications:
       - connect-server
