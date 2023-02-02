@@ -7,6 +7,10 @@
 
 {% set connect_server = salt['pillar.get']("secrets_automation:connect_server") %}
 
+include:
+  - docker
+  - docker.compose
+
 {{ connect_server.config_dir }}:
   file.directory:
     - user: root
