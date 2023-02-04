@@ -68,9 +68,10 @@ secrets_automation:
 # Run OPSA's Docker container.
 # This pillar requires "salt-formulas/docker-formula".
 docker:
-  wanted:
-    - docker
-    - compose
+  pkgs:
+    deps:
+      - python3-dnf-plugin-versionlock
+      - python3-docker
 
   compose:
     applications:
