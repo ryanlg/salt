@@ -5,13 +5,13 @@
 # This is just a wrapper around the upstream formula to bridge some incompatibilities.
 
 
-{% if salt['state.sls_exists']("docker") %}
+{% if salt['state.sls_exists']("docker-formula.docker") %}
 include:
 {# @linear(RH-15): "docker-formula" requires some packages in EPEL #}
 {% if grains['os_family'] == "RedHat" %}
   - pkgrepos.epel
 {% endif %}
-  - docker
+  - docker-formula.docker
 {% else %}
 warn-formula-not-pulled:
   test.configurable_test_state:
