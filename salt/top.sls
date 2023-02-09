@@ -3,6 +3,7 @@
 base:
   '*':
     - os.chrony
+    - formula-adapters
 
   'salt.*':
     - os.auto-update
